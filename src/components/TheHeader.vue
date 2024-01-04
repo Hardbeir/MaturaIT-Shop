@@ -4,7 +4,7 @@
 
 <div class="logo flex items-center gap-4">
 
-    <img class="w-10" src="/logo.png" alt="Logo">
+    <img class="w-10" src="" alt="Logo">
 
     <div class="">
         
