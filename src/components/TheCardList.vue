@@ -25,6 +25,7 @@ defineProps({
                 :image="item.image" 
                 :title="item.title" 
                 :price="item.price"
+                :rating="item.price - item.rating.rate"
                 :onClickAdd="onClickAdd"
                 :onClickFavorite = "onClickFavorite"
             />

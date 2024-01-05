@@ -5,14 +5,15 @@ defineProps({
     image: String,
     title: String,
     price: Number,
+    rating: Number,
 
     isFavorite: Boolean,
     isAdded: Boolean,
 
     onClickFavorite: Function,
-    onClickAdd: Function
+    onClickAdd: Function,
 
-})
+});
 
 
 
@@ -34,7 +35,9 @@ defineProps({
         <div class="flex flex-col">
 
             <span class="font-semibold text-slate-400">Price:</span>
-            <span> {{price}} $</span>
+            <span> {{ price }} $</span>
+            <span class="font-semibold text-slate-400">Rating:</span>
+            <span>{{ rating.toFixed(2) }} $</span>
 
         </div>
 
