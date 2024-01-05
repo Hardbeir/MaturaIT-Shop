@@ -12,7 +12,7 @@
 
 defineProps({
     products: Array
-})
+});
 
 </script>
 
@@ -28,6 +28,7 @@ defineProps({
                 :rating="item.price - item.rating.rate"
                 :onClickAdd="onClickAdd"
                 :onClickFavorite = "onClickFavorite"
+                :isFavorite="item.isFavorite"
             />
 
         </div>

@@ -13,6 +13,8 @@ const filters = reactive({
     searchQuery: '',
 });
 
+
+
 // Ref na produkty
 const products = ref([]);
 
@@ -51,15 +53,62 @@ const onChangeInput = (event) => {
 const fetchItems = async () => {
     try {
         const { data } = await axios.get('https://fakestoreapi.com/products');
+
         originalProducts = data;
+
+        products.value = data.map((obj) => ({
+            ...obj,
+            isFavorite: false, 
+            isAdded: false
+        }));
+
         sortProducts(); // Sortowanie produktów po pobraniu
+
     } catch (err) {
         console.log(err);
     }
 }
 
 // Uruchomienie funkcji pobierającej produkty przy starcie komponentu
-onMounted(fetchItems);
+onMounted(async () => {
+   await fetchItems();
+   await fetchFavorites();
+});
+
+//Funkcja do przycisku Ulubionych "Favorite"
+const fetchFavorites = async () =>{
+    try{
+        //dostajemy Cart
+        const {data: favorites} = await axios.get('https://1a21eb1fbd078f55.mokky.dev/favoritse');
+        //Odświeżamy  dodajemy dwie właściwości  isFavorite, favoriteId
+        products.value = products.value.map(item => {
+
+            const favorite = favorites.find(favorite => favorite.productId === item.id);
+
+
+            if(!favorite) {
+            return item;
+        }
+
+            return{
+                ...item,
+                isFavorite: true,
+                favoriteId: favorite.id,
+            };
+        });
+
+
+        console.log(products.value)
+    }catch (err){
+        console.log(err)
+    }
+};
+
+const addToFavorite = async (item) => {
+
+    item.isFavorite = true
+
+};
 
 </script>
 
