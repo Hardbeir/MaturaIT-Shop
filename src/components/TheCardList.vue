@@ -11,7 +11,7 @@
     }
 
 defineProps({
-    items: Array
+    products: Array
 })
 
 </script>
@@ -20,7 +20,7 @@ defineProps({
         <div class="grid grid-cols-4 gap-5 mt-8 max-md:grid-cols-1">
 
             <Cart 
-                v-for="item in items"
+                v-for="item in products"
                 :key="item.id"
                 :image="item.image" 
                 :title="item.title" 
