@@ -80,7 +80,7 @@ We are looking for:
 
 - Clean, readable code.
 - Practical project structure.
-- Effective use of Vue 3, TypeScript, and Tailwind CSS.
+- Effective use of Vue 3, (TypeScript I don`t use), and Tailwind CSS.
 - Basic git knowledge.
 - General understanding of modern frontend development.
 
