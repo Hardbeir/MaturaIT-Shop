@@ -1,3 +1,5 @@
+Deployd: https://main--stirring-sfogliatella-fce4e0.netlify.app/
+
 # MaturaIT Assignment - Advanced
 
 Welcome to the MaturaIT Assignment - Advanced repository. This repository serves as the starting point for the `MaturaIT Shop`, a straightforward e-commerce website.
